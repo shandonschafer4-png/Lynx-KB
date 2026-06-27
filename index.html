@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lynx Telematics — Knowledge Base</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="layout">
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-header">
+      <div class="logo-block">
+        <div class="logo-icon">LT</div>
+        <div><div class="logo-name">Lynx Telematics</div><div class="logo-sub">Knowledge Base</div></div>
+      </div>
+    </div>
+    <div class="search-wrap">
+      <input class="search-input" type="text" id="searchInput" placeholder="Search articles..." oninput="filterNav(this.value)">
+      <span class="search-icon">&#9906;</span>
+    </div>
+    <nav class="nav" id="navTree">
+      <div class="nav-section">
+        <div class="nav-section-label">Getting Started</div>
+        <a class="nav-link active" href="index.html">Home</a>
+        <a class="nav-link" href="articles/module1-icons.html">Module 1 — Platform Icons</a>
+      </div>
+      <div class="nav-section">
+        <div class="nav-section-label">Administration</div>
+        <a class="nav-link" href="articles/asset-groups.html">Asset Groups</a>
+        <a class="nav-link" href="articles/asset-rating.html">Asset Rating</a>
+        <a class="nav-link" href="articles/cost-centres.html">Cost Centres</a>
+        <a class="nav-link" href="articles/users.html">Users</a>
+        <a class="nav-link" href="articles/user-roles.html">User Roles</a>
+      </div>
+      <div class="nav-section">
+        <div class="nav-section-label">Reference</div>
+        <a class="nav-link coming" href="#">CAN / FMS Parameter Guide</a>
+        <a class="nav-link coming" href="#">Device Configuration</a>
+        <a class="nav-link coming" href="#">Alert Setup Guide</a>
+      </div>
+    </nav>
+    <div class="sidebar-footer"><span>Lynx Telematics &copy; 2025</span></div>
+  </aside>
+
+  <main class="main">
+    <header class="topbar">
+      <button class="menu-toggle" onclick="toggleSidebar()">&#9776;</button>
+      <div class="breadcrumb">Home</div>
+      <div class="topbar-right"><span class="badge">Internal Use Only</span></div>
+    </header>
+    <div class="content">
+
+      <div class="hero">
+        <div class="hero-inner">
+          <h1 class="hero-title">Lynx Telematics Knowledge Base</h1>
+          <p class="hero-sub">Training materials, platform guides, and operational references for the Lynx Telematics fleet management platform.</p>
+          <div class="hero-search-wrap">
+            <input class="hero-search" type="text" placeholder="Search the knowledge base..." oninput="filterNav(this.value)">
+          </div>
+        </div>
+      </div>
+
+      <div class="stats-row">
+        <div class="stat-card"><div class="stat-num">6</div><div class="stat-label">Articles Published</div></div>
+        <div class="stat-card"><div class="stat-num">2</div><div class="stat-label">Categories Active</div></div>
+        <div class="stat-card"><div class="stat-num">10+</div><div class="stat-label">Topics Covered</div></div>
+        <div class="stat-card"><div class="stat-num">v1.1</div><div class="stat-label">Current Version</div></div>
+      </div>
+
+      <h2 class="section-heading">Browse by Category</h2>
+      <div class="card-grid">
+
+        <a class="cat-card active-card" href="articles/module1-icons.html">
+          <div class="cat-icon">&#9632;</div>
+          <div class="cat-body">
+            <div class="cat-title">Platform Icons</div>
+            <div class="cat-desc">Understand every icon on the Keytelemetrics platform — asset status, alert priorities, trip ratings, and all functional controls.</div>
+            <div class="cat-meta">1 article &nbsp;·&nbsp; Getting Started</div>
+          </div>
+          <div class="cat-arrow">&#8594;</div>
+        </a>
+
+        <a class="cat-card active-card" href="articles/asset-groups.html">
+          <div class="cat-icon">&#9670;</div>
+          <div class="cat-body">
+            <div class="cat-title">Administration</div>
+            <div class="cat-desc">Managing asset groups, cost centres, rating profiles, users, and roles. Everything you need to set up and maintain the platform.</div>
+            <div class="cat-meta">5 articles &nbsp;·&nbsp; Administration</div>
+          </div>
+          <div class="cat-arrow">&#8594;</div>
+        </a>
+
+        <div class="cat-card disabled-card">
+          <div class="cat-icon muted">&#9650;</div>
+          <div class="cat-body">
+            <div class="cat-title muted">Alerts &amp; Events</div>
+            <div class="cat-desc muted">Alert configuration, priority levels, event types, and how to action alerts effectively.</div>
+            <div class="cat-meta muted">Coming soon</div>
+          </div>
+          <div class="cat-arrow muted">&#8594;</div>
+        </div>
+
+        <div class="cat-card disabled-card">
+          <div class="cat-icon muted">&#9632;</div>
+          <div class="cat-body">
+            <div class="cat-title muted">Trip History &amp; Replay</div>
+            <div class="cat-desc muted">How to navigate trip history, replay trips, and interpret telemetry data.</div>
+            <div class="cat-meta muted">Coming soon</div>
+          </div>
+          <div class="cat-arrow muted">&#8594;</div>
+        </div>
+
+        <div class="cat-card disabled-card">
+          <div class="cat-icon muted">&#9654;</div>
+          <div class="cat-body">
+            <div class="cat-title muted">Reporting</div>
+            <div class="cat-desc muted">Generating fleet reports, scheduling automated reports, and interpreting report data.</div>
+            <div class="cat-meta muted">Coming soon</div>
+          </div>
+          <div class="cat-arrow muted">&#8594;</div>
+        </div>
+
+        <div class="cat-card disabled-card">
+          <div class="cat-icon muted">&#9711;</div>
+          <div class="cat-body">
+            <div class="cat-title muted">CAN / FMS Reference</div>
+            <div class="cat-desc muted">CAN bus parameter definitions, FMS accessory configuration, and telemetry field reference.</div>
+            <div class="cat-meta muted">Coming soon</div>
+          </div>
+          <div class="cat-arrow muted">&#8594;</div>
+        </div>
+
+      </div>
+
+      <h2 class="section-heading">All Articles</h2>
+      <div class="recent-list">
+        <a class="recent-item" href="articles/module1-icons.html">
+          <div class="recent-icon">&#9632;</div>
+          <div class="recent-body">
+            <div class="recent-title">Module 1 — Understanding Platform Icons</div>
+            <div class="recent-meta">Getting Started &nbsp;·&nbsp; Published June 2025 &nbsp;·&nbsp; 4 sections</div>
+          </div>
+          <div class="recent-arrow">&#8594;</div>
+        </a>
+        <a class="recent-item" href="articles/asset-groups.html">
+          <div class="recent-icon">&#9670;</div>
+          <div class="recent-body">
+            <div class="recent-title">Asset Groups</div>
+            <div class="recent-meta">Administration &nbsp;·&nbsp; Published June 2025 &nbsp;·&nbsp; 4 sections</div>
+          </div>
+          <div class="recent-arrow">&#8594;</div>
+        </a>
+        <a class="recent-item" href="articles/asset-rating.html">
+          <div class="recent-icon">&#9733;</div>
+          <div class="recent-body">
+            <div class="recent-title">Asset Rating</div>
+            <div class="recent-meta">Administration &nbsp;·&nbsp; Published June 2025 &nbsp;·&nbsp; 6 sections</div>
+          </div>
+          <div class="recent-arrow">&#8594;</div>
+        </a>
+        <a class="recent-item" href="articles/cost-centres.html">
+          <div class="recent-icon">&#9670;</div>
+          <div class="recent-body">
+            <div class="recent-title">Cost Centres</div>
+            <div class="recent-meta">Administration &nbsp;·&nbsp; Published June 2025 &nbsp;·&nbsp; 4 sections</div>
+          </div>
+          <div class="recent-arrow">&#8594;</div>
+        </a>
+        <a class="recent-item" href="articles/users.html">
+          <div class="recent-icon">&#9632;</div>
+          <div class="recent-body">
+            <div class="recent-title">Users</div>
+            <div class="recent-meta">Administration &nbsp;·&nbsp; Published June 2025 &nbsp;·&nbsp; 4 sections</div>
+          </div>
+          <div class="recent-arrow">&#8594;</div>
+        </a>
+        <a class="recent-item" href="articles/user-roles.html">
+          <div class="recent-icon">&#9632;</div>
+          <div class="recent-body">
+            <div class="recent-title">User Roles</div>
+            <div class="recent-meta">Administration &nbsp;·&nbsp; Published June 2025 &nbsp;·&nbsp; 3 sections</div>
+          </div>
+          <div class="recent-arrow">&#8594;</div>
+        </a>
+      </div>
+
+      <div class="page-footer">Lynx Telematics Knowledge Base &nbsp;·&nbsp; Internal Use Only &nbsp;·&nbsp; v1.1</div>
+    </div>
+  </main>
+</div>
+<script src="js/main.js"></script>
+</body>
+</html>

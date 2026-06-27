@@ -12,7 +12,6 @@ function filterNav(val) {
   }
 }
 
-// Close sidebar on outside click (mobile)
 document.addEventListener('click', function(e) {
   const sb = document.getElementById('sidebar');
   const toggle = document.querySelector('.menu-toggle');
@@ -21,7 +20,6 @@ document.addEventListener('click', function(e) {
   }
 });
 
-// Smooth scroll for TOC links
 document.querySelectorAll('.toc-link').forEach(link => {
   link.addEventListener('click', function(e) {
     const href = this.getAttribute('href');

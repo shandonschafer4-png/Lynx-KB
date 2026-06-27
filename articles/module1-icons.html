@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Module 1 — Platform Icons | Lynx Telematics KB</title>
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+<div class="layout">
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-header">
+      <div class="logo-block">
+        <div class="logo-icon">LT</div>
+        <div>
+          <div class="logo-name">Lynx Telematics</div>
+          <div class="logo-sub">Knowledge Base</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="search-wrap">
+      <input class="search-input" type="text" id="searchInput" placeholder="Search articles..." oninput="filterNav(this.value)">
+      <span class="search-icon">&#9906;</span>
+    </div>
+
+    <nav class="nav" id="navTree">
+      <div class="nav-section">
+        <div class="nav-section-label">Getting Started</div>
+        <a class="nav-link" href="../index.html">Home</a>
+        <a class="nav-link active" href="module1-icons.html">Module 1 — Platform Icons</a>
+      </div>
+      <div class="nav-section">
+        <div class="nav-section-label">Platform Modules</div>
+        <a class="nav-link coming" href="#">Module 2 — Coming Soon</a>
+        <a class="nav-link coming" href="#">Module 3 — Coming Soon</a>
+      </div>
+      <div class="nav-section">
+        <div class="nav-section-label">Reference</div>
+        <a class="nav-link coming" href="#">CAN / FMS Parameter Guide</a>
+        <a class="nav-link coming" href="#">Device Configuration</a>
+        <a class="nav-link coming" href="#">Alert Setup Guide</a>
+      </div>
+    </nav>
+
+    <div class="sidebar-footer">
+      <span>Lynx Telematics &copy; 2025</span>
+    </div>
+  </aside>
+
+  <!-- MAIN -->
+  <main class="main">
+
+    <header class="topbar">
+      <button class="menu-toggle" onclick="toggleSidebar()">&#9776;</button>
+      <div class="breadcrumb">
+        <a href="../index.html">Home</a>
+        <span class="sep">›</span>
+        <a href="#">Getting Started</a>
+        <span class="sep">›</span>
+        Module 1 — Platform Icons
+      </div>
+      <div class="topbar-right">
+        <span class="badge">Module 1</span>
+      </div>
+    </header>
+
+    <div class="content">
+      <div class="article-wrap">
+
+        <!-- ARTICLE BODY -->
+        <div class="article-body">
+
+          <h1 class="article-title">Understanding Platform Icons</h1>
+          <div class="article-meta">
+            <span>&#128197; Published June 2025</span>
+            <span>&#128194; Platform: Keytelemetrics</span>
+            <span>&#128100; Audience: All Team Members</span>
+            <span>&#9881; Version 1.0</span>
+          </div>
+
+          <p style="font-size:14px; color:var(--text); line-height:1.75; margin-bottom:20px;">
+            Icons are used throughout the Keytelemetrics platform to communicate asset status, alert priority, and available actions — often without displaying any text. Understanding what each icon represents is fundamental to using the platform effectively.
+          </p>
+          <p style="font-size:14px; color:var(--text); line-height:1.75; margin-bottom:20px;">
+            This module covers two categories: <strong style="color:var(--white)">descriptive icons</strong> (which tell you the current state of something) and <strong style="color:var(--white)">functional icons</strong> (which you can click to perform an action).
+          </p>
+
+          <div class="callout note">
+            <strong>Note:</strong> Screenshots in your training environment may differ slightly depending on your assigned client profile and browser settings. All icons described below apply to the standard Keytelemetrics interface.
+          </div>
+
+          <hr class="article-divider">
+
+          <!-- SECTION 1: DESCRIPTIVE -->
+          <div class="article-section" id="descriptive">
+            <h2>1. Descriptive Icons</h2>
+            <p>Descriptive icons cannot be clicked — they display the current state of an asset or alert. They appear on the map, in the asset list, and in trip history views.</p>
+
+            <h3 id="asset-status">1.1 Asset Status Icons</h3>
+            <p>These icons appear next to each vehicle in the asset list and on the live map. They update in real time as the vehicle state changes.</p>
+
+            <table class="icon-table">
+              <thead>
+                <tr><th>Icon</th><th>Description</th></tr>
+              </thead>
+              <tbody>
+                <tr class="table-section-header"><td colspan="2">Asset Status</td></tr>
+                <tr>
+                  <td><span class="icon-pill">PARKED</span></td>
+                  <td>Asset is <strong style="color:var(--white)">parked</strong>. Ignition is OFF. The vehicle is stationary and the engine is not running. No trip is in progress.</td>
+                </tr>
+                <tr>
+                  <td><span class="icon-pill green">MOVING</span></td>
+                  <td>Asset is <strong style="color:var(--white)">moving</strong>. Ignition is ON and speed is greater than zero. A trip is actively in progress.</td>
+                </tr>
+                <tr>
+                  <td><span class="icon-pill orange">IDLING</span></td>
+                  <td>Asset is <strong style="color:var(--white)">stopped or idling</strong>. Ignition is ON but speed is zero. The engine is running but the vehicle is not moving. May indicate driver waiting time or unauthorised idling.</td>
+                </tr>
+              </tbody>
+            </table>
+
+            <div class="callout tip">
+              <strong>Tip:</strong> Idling events consume fuel without productive movement. Excessive idling will appear in driver behaviour reports and may trigger alerts depending on your fleet configuration.
+            </div>
+
+            <h3 id="alert-priority">1.2 Alert Priority Icons</h3>
+            <p>Alert priority icons appear in the Alerts panel, trip replay, and event lists. They indicate how urgently an alert requires attention.</p>
+
+            <table class="icon-table">
+              <thead>
+                <tr><th>Icon</th><th>Description</th></tr>
+              </thead>
+              <tbody>
+                <tr class="table-section-header"><td colspan="2">Alert Priority</td></tr>
+                <tr>
+                  <td><span class="icon-pill blue">LOW</span></td>
+                  <td><strong style="color:var(--white)">Low priority</strong> alert or informational event. Requires monitoring but no immediate action. Examples: geofence entry, scheduled maintenance reminder.</td>
+                </tr>
+                <tr>
+                  <td><span class="icon-pill orange">MEDIUM</span></td>
+                  <td><strong style="color:var(--white)">Medium priority</strong> alert. Requires attention within a reasonable timeframe. Examples: speeding, harsh braking, extended idling.</td>
+                </tr>
+                <tr>
+                  <td><span class="icon-pill red">HIGH</span></td>
+                  <td><strong style="color:var(--white)">High priority</strong> alert. Requires immediate attention. Examples: panic button activation, tampering detection, extreme speeding.</td>
+                </tr>
+              </tbody>
+            </table>
+
+            <h3 id="trip-rating">1.3 Trip Rating Icon</h3>
+            <p>The trip rating icon appears in Trip History and Trip Details views. It gives a quick visual summary of driver behaviour quality for that trip.</p>
+
+            <table class="icon-table">
+              <thead>
+                <tr><th>Icon</th><th>Description</th></tr>
+              </thead>
+              <tbody>
+                <tr class="table-section-header"><td colspan="2">Trip Rating</td></tr>
+                <tr>
+                  <td><span class="icon-pill green">66–100%</span></td>
+                  <td><strong style="color:#2ecc71">Good trip rating (66–100%).</strong> Driver behaviour was acceptable throughout the trip. Few or no events triggered.</td>
+                </tr>
+                <tr>
+                  <td><span class="icon-pill orange">33–66%</span></td>
+                  <td><strong style="color:#e67e22">Average trip rating (33–66%).</strong> Some driver behaviour events were recorded. Review the trip detail for specifics.</td>
+                </tr>
+                <tr>
+                  <td><span class="icon-pill red">0–33%</span></td>
+                  <td><strong style="color:#e74c3c">Poor trip rating (0–33%).</strong> Significant driver behaviour events recorded. This trip should be reviewed and discussed with the driver.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <hr class="article-divider">
+
+          <!-- SECTION 2: FUNCTIONAL -->
+          <div class="article-section" id="functional">
+            <h2>2. Functional Icons</h2>
+            <p>Functional icons can be clicked to perform an action. They appear on maps, in menus, and throughout the administration and reporting sections. Hovering over a functional icon will usually reveal a tooltip describing what it does.</p>
+
+            <h3 id="maps-general">2.1 Maps and General</h3>
+            <table class="icon-table">
+              <thead>
+                <tr><th>Icon</th><th>Description</th></tr>
+              </thead>
+              <tbody>
+                <tr class="table-section-header"><td colspan="2">Maps and General</td></tr>
+                <tr><td><span class="icon-pill blue">CENTRE</span></td><td>Centre the map on all assets within the selected client.</td></tr>
+                <tr><td><span class="icon-pill blue">FULLSCR</span></td><td>Open a fullscreen map showing the asset or assets in view.</td></tr>
+                <tr><td><span class="icon-pill">LAYERS</span></td><td>Change the map layer — toggle between satellite, hybrid, or standard street map view.</td></tr>
+                <tr><td><span class="icon-pill">+ / −</span></td><td>Zoom in and zoom out controls on the map view.</td></tr>
+                <tr><td><span class="icon-pill">ROUTE</span></td><td>Top button: Route creation tool. Bottom button: Zone creation tool.</td></tr>
+                <tr><td><span class="icon-pill orange">EDIT</span></td><td>Top button: Edit an existing zone. Bottom button: Delete an existing zone.</td></tr>
+                <tr><td><span class="icon-pill">OPTIONS</span></td><td>Options menu — reveals additional actions for the selected item.</td></tr>
+                <tr><td><span class="icon-pill">FILTER</span></td><td>Filter the asset or alert list by criteria such as status, group, or date range.</td></tr>
+                <tr><td><span class="icon-pill">SEARCH</span></td><td>Search for a specific asset, zone, or record by name or identifier.</td></tr>
+                <tr><td><span class="icon-pill blue">POP-OUT</span></td><td>Open the current data in a new pop-up window for side-by-side viewing.</td></tr>
+                <tr><td><span class="icon-pill">MEASURE</span></td><td>Measurement tool — draw a line on the map to measure distance between two points.</td></tr>
+                <tr><td><span class="icon-pill">ZONES</span></td><td>Toggle the display of zones and routes on the live map.</td></tr>
+                <tr><td><span class="icon-pill">INFO</span></td><td>Point information — click a location on the map to view its address details.</td></tr>
+              </tbody>
+            </table>
+
+            <h3 id="menu-icons">2.2 Menu Navigation Icons</h3>
+            <p>These icons form the left-hand navigation menu. The active section icon will appear in red. Clicking any icon takes you directly to that section of the platform.</p>
+
+            <table class="icon-table">
+              <thead>
+                <tr><th>Icon</th><th>Section</th></tr>
+              </thead>
+              <tbody>
+                <tr class="table-section-header"><td colspan="2">Menu Navigation</td></tr>
+                <tr><td><span class="icon-pill blue">OVERVIEW</span></td><td>Live map and asset status panel. This is the default home screen.</td></tr>
+                <tr><td><span class="icon-pill orange">ALERTS</span></td><td>View and manage triggered alerts for your fleet.</td></tr>
+                <tr><td><span class="icon-pill">TRIP</span></td><td>Trip Replay — replay historical trips for any asset, including events and telemetry.</td></tr>
+                <tr><td><span class="icon-pill">REPORT</span></td><td>Reporting — access scheduled and on-demand fleet reports.</td></tr>
+                <tr><td><span class="icon-pill">ADMIN</span></td><td>Administration — manage assets, users, alerts, zones, and device configuration.</td></tr>
+                <tr><td><span class="icon-pill">CLIENT</span></td><td>Change Client — switch between different client accounts you have access to.</td></tr>
+                <tr><td><span class="icon-pill red">LOGOUT</span></td><td>Logout — end your current session securely.</td></tr>
+                <tr><td><span class="icon-pill">DASH</span></td><td>Dashboards — access visual dashboard widgets and KPI displays.</td></tr>
+                <tr><td><span class="icon-pill">NOTIF</span></td><td>Notifications — view system and account notifications.</td></tr>
+                <tr><td><span class="icon-pill">PROFILE</span></td><td>Profile — view and update your user account settings.</td></tr>
+              </tbody>
+            </table>
+
+            <h3 id="event-icons">2.3 Event Icons</h3>
+            <p>Event icons appear in the Events and Alerts sections. Clicking them opens associated media captured at the time of the event.</p>
+
+            <table class="icon-table">
+              <thead>
+                <tr><th>Icon</th><th>Description</th></tr>
+              </thead>
+              <tbody>
+                <tr class="table-section-header"><td colspan="2">Event Media Icons</td></tr>
+                <tr><td><span class="icon-pill blue">PHOTO</span></td><td>Photo event. Clicking this icon opens the photograph captured at the time of the event in a separate pop-up window.</td></tr>
+                <tr><td><span class="icon-pill blue">VIDEO</span></td><td>Video event. Clicking this icon opens the video clip or clips captured at the time of the event in a separate pop-up window.</td></tr>
+              </tbody>
+            </table>
+
+            <h3 id="admin-icons">2.4 Administration Icons</h3>
+            <p>These icons appear throughout the Administration section and are used to manage assets, devices, users, zones, and alert configurations.</p>
+
+            <table class="icon-table">
+              <thead>
+                <tr><th>Icon</th><th>Description</th></tr>
+              </thead>
+              <tbody>
+                <tr class="table-section-header"><td colspan="2">Administration</td></tr>
+                <tr><td><span class="icon-pill">VENDOR</span></td><td>Vendor level — navigate to vendor-level settings and details.</td></tr>
+                <tr><td><span class="icon-pill">CLIENT</span></td><td>Client / Home — return to the client home level in the administration hierarchy.</td></tr>
+                <tr><td><span class="icon-pill green">+ ADD</span></td><td>Add new item — create a new asset, user, alert rule, zone, or other record.</td></tr>
+                <tr><td><span class="icon-pill">REFRESH</span></td><td>Refresh list — reload the current list to reflect the latest data.</td></tr>
+                <tr><td><span class="icon-pill">FILTER</span></td><td>Filter list — narrow down the displayed records by applying filter criteria.</td></tr>
+                <tr><td><span class="icon-pill">COLUMNS</span></td><td>Choose columns — customise which columns are displayed in the current list view.</td></tr>
+                <tr><td><span class="icon-pill">UP</span></td><td>Go up a level — navigate one level up in the administration hierarchy.</td></tr>
+                <tr><td><span class="icon-pill">SEARCH</span></td><td>Search — find a specific record within the current administration list.</td></tr>
+                <tr><td><span class="icon-pill red">STATE</span></td><td>Delete / Change state — activate, deactivate, suspend, or delete the selected item.</td></tr>
+                <tr><td><span class="icon-pill">CLOSE</span></td><td>Close item — discard changes and close the current record without saving.</td></tr>
+                <tr><td><span class="icon-pill blue">EDIT</span></td><td>Edit item — open the selected record for editing.</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <hr class="article-divider">
+
+          <!-- QUICK REFERENCE -->
+          <div class="article-section" id="quick-ref">
+            <h2>3. Quick Reference Summary</h2>
+            <table class="icon-table">
+              <thead>
+                <tr><th>Category</th><th>Type</th><th>Where It Appears</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>Asset Status</td><td>Descriptive</td><td>Live map, asset list</td></tr>
+                <tr><td>Alert Priority</td><td>Descriptive</td><td>Alerts panel, trip replay</td></tr>
+                <tr><td>Trip Rating</td><td>Descriptive</td><td>Trip history, trip details</td></tr>
+                <tr><td>Map Controls</td><td>Functional — click to use</td><td>Live map view</td></tr>
+                <tr><td>Menu Navigation</td><td>Functional — click to use</td><td>Left-hand sidebar</td></tr>
+                <tr><td>Events &amp; Media</td><td>Functional — click to use</td><td>Events and Alerts section</td></tr>
+                <tr><td>Administration</td><td>Functional — click to use</td><td>Administration section</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="page-footer">
+            Lynx Telematics Knowledge Base &nbsp;·&nbsp; Module 1 v1.0 &nbsp;·&nbsp; Internal Use Only
+          </div>
+
+        </div>
+
+        <!-- TABLE OF CONTENTS -->
+        <div class="article-toc">
+          <div class="toc-label">On This Page</div>
+          <a class="toc-link" href="#descriptive">1. Descriptive Icons</a>
+          <a class="toc-link" href="#asset-status">&nbsp;&nbsp;1.1 Asset Status</a>
+          <a class="toc-link" href="#alert-priority">&nbsp;&nbsp;1.2 Alert Priority</a>
+          <a class="toc-link" href="#trip-rating">&nbsp;&nbsp;1.3 Trip Rating</a>
+          <a class="toc-link" href="#functional">2. Functional Icons</a>
+          <a class="toc-link" href="#maps-general">&nbsp;&nbsp;2.1 Maps &amp; General</a>
+          <a class="toc-link" href="#menu-icons">&nbsp;&nbsp;2.2 Menu Navigation</a>
+          <a class="toc-link" href="#event-icons">&nbsp;&nbsp;2.3 Event Icons</a>
+          <a class="toc-link" href="#admin-icons">&nbsp;&nbsp;2.4 Administration</a>
+          <a class="toc-link" href="#quick-ref">3. Quick Reference</a>
+        </div>
+
+      </div>
+    </div>
+  </main>
+</div>
+
+<script src="../js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>User Roles | Lynx Telematics KB</title>
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+<div class="layout">
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-header">
+      <div class="logo-block">
+        <div class="logo-icon">LT</div>
+        <div><div class="logo-name">Lynx Telematics</div><div class="logo-sub">Knowledge Base</div></div>
+      </div>
+    </div>
+    <div class="search-wrap">
+      <input class="search-input" type="text" id="searchInput" placeholder="Search articles..." oninput="filterNav(this.value)">
+      <span class="search-icon">&#9906;</span>
+    </div>
+    <nav class="nav" id="navTree">
+      <div class="nav-section">
+        <div class="nav-section-label">Getting Started</div>
+        <a class="nav-link" href="../index.html">Home</a>
+        <a class="nav-link" href="module1-icons.html">Module 1 — Platform Icons</a>
+      </div>
+      <div class="nav-section">
+        <div class="nav-section-label">Administration</div>
+        <a class="nav-link" href="asset-groups.html">Asset Groups</a>
+        <a class="nav-link" href="asset-rating.html">Asset Rating</a>
+        <a class="nav-link" href="cost-centres.html">Cost Centres</a>
+        <a class="nav-link" href="users.html">Users</a>
+        <a class="nav-link active" href="user-roles.html">User Roles</a>
+      </div>
+      <div class="nav-section">
+        <div class="nav-section-label">Reference</div>
+        <a class="nav-link coming" href="#">CAN / FMS Parameter Guide</a>
+        <a class="nav-link coming" href="#">Device Configuration</a>
+        <a class="nav-link coming" href="#">Alert Setup Guide</a>
+      </div>
+    </nav>
+    <div class="sidebar-footer"><span>Lynx Telematics &copy; 2025</span></div>
+  </aside>
+  <main class="main">
+    <header class="topbar">
+      <button class="menu-toggle" onclick="toggleSidebar()">&#9776;</button>
+      <div class="breadcrumb"><a href="../index.html">Home</a><span class="sep">›</span><a href="#">Administration</a><span class="sep">›</span>User Roles</div>
+      <div class="topbar-right"><span class="badge">Administration</span></div>
+    </header>
+    <div class="content">
+      <div class="article-wrap">
+        <div class="article-body">
+          <h1 class="article-title">User Roles</h1>
+          <div class="article-meta">
+            <span>&#128197; Published June 2025</span>
+            <span>&#128194; Platform: Keytelemetrics</span>
+            <span>&#128100; Audience: Administrators</span>
+          </div>
+          <p style="font-size:14px;color:var(--text);line-height:1.75;margin-bottom:20px;">Roles control what a user can <strong style="color:var(--white)">see and do</strong> on the platform. They define access rights at a granular level — for example, allowing a user to list assets but not create or edit them. Roles can be created at both Vendor and Client level.</p>
+          <div class="callout note"><strong>Default:</strong> The only built-in role is <strong>Administrator</strong>, which grants full view and edit access to everything the user has visibility of.</div>
+          <hr class="article-divider">
+
+          <div class="article-section" id="create-role">
+            <h2>1. Creating a Role</h2>
+            <p>Navigate to <strong style="color:var(--white)">Administration → Accounts → Roles</strong>, then click the <strong style="color:var(--white)">+</strong> button and complete the Role Wizard.</p>
+            <table class="icon-table">
+              <thead><tr><th>Step</th><th>Action</th></tr></thead>
+              <tbody>
+                <tr><td>1</td><td>Click <strong style="color:var(--white)">+</strong> to open the User Role Wizard</td></tr>
+                <tr><td>2</td><td>Enter a <strong style="color:var(--white)">Name</strong> and optional Description for the role</td></tr>
+                <tr><td>3</td><td>Click <strong style="color:var(--white)">Next</strong></td></tr>
+                <tr><td>4</td><td>Select the access rights (see table below)</td></tr>
+                <tr><td>5</td><td>Click <strong style="color:var(--white)">Save</strong></td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="article-section" id="access-rights">
+            <h2>2. Available Access Rights</h2>
+            <p>Each permission area can be granted List and/or Create access. Some areas have additional granular rights.</p>
+            <table class="icon-table">
+              <thead><tr><th>Area</th><th>Available Rights</th></tr></thead>
+              <tbody>
+                <tr><td>User Roles</td><td>List, Create</td></tr>
+                <tr><td>Users</td><td>List, Create</td></tr>
+                <tr><td>Cost Centres</td><td>Create</td></tr>
+                <tr><td>Asset Categories</td><td>Create</td></tr>
+                <tr><td>Asset Groups</td><td>Create</td></tr>
+                <tr><td>Assets</td><td>List, Create</td></tr>
+                <tr><td>Devices</td><td>List, Create, Poll, Toggle Outputs, Upload Parameters</td></tr>
+                <tr><td>SIM Cards</td><td>List, Create</td></tr>
+                <tr><td>Device Providers</td><td>List, Create</td></tr>
+                <tr><td>SMS Gateways</td><td>List, Create</td></tr>
+                <tr><td>Zones</td><td>List, Create</td></tr>
+                <tr><td>Analytics</td><td>View</td></tr>
+                <tr><td>Reports</td><td>Run</td></tr>
+                <tr><td>Alerts</td><td>List</td></tr>
+                <tr><td>Custom Fields</td><td>None / Create</td></tr>
+              </tbody>
+            </table>
+            <div class="callout tip"><strong>Tip:</strong> Create roles that match your team's job functions — e.g. a "Fleet Viewer" role with List only, a "Fleet Manager" role with List + Create, and a "Technician" role with device-specific rights.</div>
+          </div>
+
+          <div class="article-section" id="assign-role">
+            <h2>3. Assigning a Role to a User</h2>
+            <p>A Role can be assigned when creating a new user, or by editing an existing user. Roles can also be assigned in bulk.</p>
+            <h3>Individual User</h3>
+            <p>Navigate to <strong style="color:var(--white)">Administration → Users</strong>, select the user, click <strong style="color:var(--white)">Edit</strong> on the User Roles section, and select the appropriate role.</p>
+            <h3>During User Creation</h3>
+            <p>After completing the personal details step in the User Wizard, the next screen presents the Role selection. Choose the applicable role before finishing.</p>
+            <div class="callout warn"><strong>Note:</strong> If no custom roles have been created yet, only <strong>Administrator</strong> will appear in the role selection list.</div>
+          </div>
+
+          <hr class="article-divider">
+          <div class="page-footer">Lynx Telematics Knowledge Base &nbsp;·&nbsp; Administration &nbsp;·&nbsp; Internal Use Only</div>
+        </div>
+        <div class="article-toc">
+          <div class="toc-label">On This Page</div>
+          <a class="toc-link" href="#create-role">1. Creating a Role</a>
+          <a class="toc-link" href="#access-rights">2. Access Rights</a>
+          <a class="toc-link" href="#assign-role">3. Assigning to Users</a>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>
+<script src="../js/main.js"></script>
+</body>
+</html>

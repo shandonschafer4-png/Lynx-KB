@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cost Centres | Lynx Telematics KB</title>
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+<div class="layout">
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-header">
+      <div class="logo-block">
+        <div class="logo-icon">LT</div>
+        <div><div class="logo-name">Lynx Telematics</div><div class="logo-sub">Knowledge Base</div></div>
+      </div>
+    </div>
+    <div class="search-wrap">
+      <input class="search-input" type="text" id="searchInput" placeholder="Search articles..." oninput="filterNav(this.value)">
+      <span class="search-icon">&#9906;</span>
+    </div>
+    <nav class="nav" id="navTree">
+      <div class="nav-section">
+        <div class="nav-section-label">Getting Started</div>
+        <a class="nav-link" href="../index.html">Home</a>
+        <a class="nav-link" href="module1-icons.html">Module 1 — Platform Icons</a>
+      </div>
+      <div class="nav-section">
+        <div class="nav-section-label">Administration</div>
+        <a class="nav-link" href="asset-groups.html">Asset Groups</a>
+        <a class="nav-link" href="asset-rating.html">Asset Rating</a>
+        <a class="nav-link active" href="cost-centres.html">Cost Centres</a>
+        <a class="nav-link" href="users.html">Users</a>
+        <a class="nav-link" href="user-roles.html">User Roles</a>
+      </div>
+      <div class="nav-section">
+        <div class="nav-section-label">Reference</div>
+        <a class="nav-link coming" href="#">CAN / FMS Parameter Guide</a>
+        <a class="nav-link coming" href="#">Device Configuration</a>
+        <a class="nav-link coming" href="#">Alert Setup Guide</a>
+      </div>
+    </nav>
+    <div class="sidebar-footer"><span>Lynx Telematics &copy; 2025</span></div>
+  </aside>
+  <main class="main">
+    <header class="topbar">
+      <button class="menu-toggle" onclick="toggleSidebar()">&#9776;</button>
+      <div class="breadcrumb"><a href="../index.html">Home</a><span class="sep">›</span><a href="#">Administration</a><span class="sep">›</span>Cost Centres</div>
+      <div class="topbar-right"><span class="badge">Administration</span></div>
+    </header>
+    <div class="content">
+      <div class="article-wrap">
+        <div class="article-body">
+          <h1 class="article-title">Cost Centres</h1>
+          <div class="article-meta">
+            <span>&#128197; Published June 2025</span>
+            <span>&#128194; Platform: Keytelemetrics</span>
+            <span>&#128100; Audience: Administrators</span>
+          </div>
+          <p style="font-size:14px;color:var(--text);line-height:1.75;margin-bottom:20px;">Cost Centres were designed to <strong style="color:var(--white)">restrict access and visibility</strong> between different divisions of the same company. Users and Assets are assigned to Cost Centres — users can only see, report on, and create alerts for assets within the same Cost Centres they belong to.</p>
+          <div class="callout note"><strong>Applies to:</strong> Users &nbsp;·&nbsp; Assets &nbsp;·&nbsp; Locations &nbsp;·&nbsp; Alerts &nbsp;·&nbsp; Reports</div>
+          <hr class="article-divider">
+
+          <div class="article-section" id="how-it-works">
+            <h2>1. How Cost Centres Work</h2>
+            <p>Cost Centres follow a parent-child hierarchy. Unlike Asset Groups, there can only be <strong style="color:var(--white)">one top-level parent</strong> Cost Centre to start. Children are added under this parent, and each child can itself become a parent.</p>
+            <p>The access rules work as follows:</p>
+            <table class="icon-table">
+              <thead><tr><th>User Level</th><th>Access</th></tr></thead>
+              <tbody>
+                <tr><td>City / Depot level user</td><td>Can only see, report on, and create alerts for their own depot's assets</td></tr>
+                <tr><td>Regional / Branch manager</td><td>Can see all depots within their region, but not other regions</td></tr>
+                <tr><td>Top management / Head office</td><td>Can see all assets across all Cost Centres regardless of region or depot</td></tr>
+              </tbody>
+            </table>
+            <div class="callout tip"><strong>Tip:</strong> Plan your Cost Centre hierarchy to mirror your actual organisational structure — region → branch → depot works well for most fleet operations.</div>
+          </div>
+
+          <div class="article-section" id="creating">
+            <h2>2. Creating Cost Centres</h2>
+            <h3>Step 1 — Rename the Default Cost Centre</h3>
+            <p>Navigate to <strong style="color:var(--white)">Administration → Organisation → Cost Centres</strong>. Select the Default Cost Centre, click <strong style="color:var(--white)">Edit</strong>, rename it to your top-level division (e.g. "HQ" or "Main Branch"), and Save.</p>
+
+            <h3>Step 2 — Add Child Cost Centres</h3>
+            <p>Click the <strong style="color:var(--white)">+</strong> button. The first child must be created under the renamed parent. After that, new Cost Centres can be added under the main parent or any existing child. Keep adding until your full structure is complete.</p>
+
+            <div class="callout note"><strong>Example structure:</strong> HQ → East / North / West / South</div>
+          </div>
+
+          <div class="article-section" id="editing">
+            <h2>3. Editing Cost Centre Information</h2>
+            <p>Select any Cost Centre and click Edit to change its Name or Parent. You can also add Contacts — these appear to users on the Overview and Alerts screens with clickable email and phone links.</p>
+            <table class="icon-table">
+              <thead><tr><th>Contact Field</th><th>Description</th></tr></thead>
+              <tbody>
+                <tr><td>Name</td><td>Contact person's name</td></tr>
+                <tr><td>Type</td><td>Role type — Owner, Technical, Emergency, etc.</td></tr>
+                <tr><td>Email</td><td>Clickable email link displayed on overview</td></tr>
+                <tr><td>Mobile</td><td>Clickable mobile number on overview</td></tr>
+                <tr><td>Phone</td><td>Landline / office number</td></tr>
+                <tr><td>Notes</td><td>Additional context shown with the contact</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="article-section" id="viewing">
+            <h2>4. Viewing Assets and Users in a Cost Centre</h2>
+            <p>Select a Cost Centre from the list, then choose either the <strong style="color:var(--white)">Assets</strong> or <strong style="color:var(--white)">Users</strong> section in the right panel to see everything assigned to that Cost Centre.</p>
+            <div class="callout note"><strong>Key difference from Asset Groups:</strong> Cost Centres control <em>who can see what</em>. Asset Groups control <em>how assets are categorised</em>. Both can be applied simultaneously.</div>
+          </div>
+
+          <hr class="article-divider">
+          <div class="page-footer">Lynx Telematics Knowledge Base &nbsp;·&nbsp; Administration &nbsp;·&nbsp; Internal Use Only</div>
+        </div>
+        <div class="article-toc">
+          <div class="toc-label">On This Page</div>
+          <a class="toc-link" href="#how-it-works">1. How Cost Centres Work</a>
+          <a class="toc-link" href="#creating">2. Creating Cost Centres</a>
+          <a class="toc-link" href="#editing">3. Editing Information</a>
+          <a class="toc-link" href="#viewing">4. Viewing Assets &amp; Users</a>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>
+<script src="../js/main.js"></script>
+</body>
+</html>

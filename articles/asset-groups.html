@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Asset Groups | Lynx Telematics KB</title>
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+<div class="layout">
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-header">
+      <div class="logo-block">
+        <div class="logo-icon">LT</div>
+        <div><div class="logo-name">Lynx Telematics</div><div class="logo-sub">Knowledge Base</div></div>
+      </div>
+    </div>
+    <div class="search-wrap">
+      <input class="search-input" type="text" id="searchInput" placeholder="Search articles..." oninput="filterNav(this.value)">
+      <span class="search-icon">&#9906;</span>
+    </div>
+    <nav class="nav" id="navTree">
+      <div class="nav-section">
+        <div class="nav-section-label">Getting Started</div>
+        <a class="nav-link" href="../index.html">Home</a>
+        <a class="nav-link" href="module1-icons.html">Module 1 — Platform Icons</a>
+      </div>
+      <div class="nav-section">
+        <div class="nav-section-label">Administration</div>
+        <a class="nav-link active" href="asset-groups.html">Asset Groups</a>
+        <a class="nav-link" href="asset-rating.html">Asset Rating</a>
+        <a class="nav-link" href="cost-centres.html">Cost Centres</a>
+        <a class="nav-link" href="users.html">Users</a>
+        <a class="nav-link" href="user-roles.html">User Roles</a>
+      </div>
+      <div class="nav-section">
+        <div class="nav-section-label">Reference</div>
+        <a class="nav-link coming" href="#">CAN / FMS Parameter Guide</a>
+        <a class="nav-link coming" href="#">Device Configuration</a>
+        <a class="nav-link coming" href="#">Alert Setup Guide</a>
+      </div>
+    </nav>
+    <div class="sidebar-footer"><span>Lynx Telematics &copy; 2025</span></div>
+  </aside>
+  <main class="main">
+    <header class="topbar">
+      <button class="menu-toggle" onclick="toggleSidebar()">&#9776;</button>
+      <div class="breadcrumb"><a href="../index.html">Home</a><span class="sep">›</span><a href="#">Administration</a><span class="sep">›</span>Asset Groups</div>
+      <div class="topbar-right"><span class="badge">Administration</span></div>
+    </header>
+    <div class="content">
+      <div class="article-wrap">
+        <div class="article-body">
+          <h1 class="article-title">Asset Groups</h1>
+          <div class="article-meta">
+            <span>&#128197; Published June 2025</span>
+            <span>&#128194; Platform: Keytelemetrics</span>
+            <span>&#128100; Audience: Administrators</span>
+          </div>
+          <p style="font-size:14px;color:var(--text);line-height:1.75;margin-bottom:20px;">Asset Groups were designed to control and manage assets of the same type or group. Assets can be assigned to multiple groups, allowing for comparison of information across groups. There are no restrictions per user — a user can see any group's assets.</p>
+          <div class="callout note"><strong>Applies to:</strong> Assets &nbsp;·&nbsp; Alerts &nbsp;·&nbsp; Reports</div>
+          <hr class="article-divider">
+
+          <div class="article-section" id="structure">
+            <h2>1. Understanding the Structure</h2>
+            <p>Asset Groups use a parent-child relationship. Unlike Cost Centres, there can be <strong style="color:var(--white)">multiple parent Asset Groups</strong>. The highest level is called <strong style="color:var(--white)">Root</strong>. Children can be added under any parent, and children may themselves act as parents.</p>
+            <p>By default, one parent Asset Group exists called <strong style="color:var(--white)">Default</strong>. This can be renamed, and children created underneath it.</p>
+            <div class="callout tip"><strong>Tip:</strong> Plan your Asset Group structure on paper before creating it in the platform. Consider how you want to group vehicles — by type, depot, region, or fleet category.</div>
+          </div>
+
+          <div class="article-section" id="creating">
+            <h2>2. Creating Asset Groups</h2>
+            <h3>Step 1 — Rename the Default Group</h3>
+            <p>Navigate to <strong style="color:var(--white)">Administration → Organisation → Asset Groups</strong>. Select the Default group, click <strong style="color:var(--white)">Edit</strong> next to Asset Group Details, and rename it. Keep the Parent set to <strong style="color:var(--white)">Root</strong>, then Save.</p>
+
+            <h3>Step 2 — Add Child Groups</h3>
+            <p>Click the <strong style="color:var(--white)">+ (Plus)</strong> button to create a new Asset Group. Select the renamed parent (or Root) and enter a name. Keep adding groups until your structure is complete.</p>
+
+            <div class="callout note"><strong>Example structure:</strong> All Assets → Vehicles → LDV / Personal Cars &nbsp;|&nbsp; All Assets → Personnel</div>
+          </div>
+
+          <div class="article-section" id="editing">
+            <h2>3. Editing Asset Group Information</h2>
+            <p>You can edit any Asset Group to change its Name and Parent, and to add Contacts. Contacts added to a group will be visible to users on the <strong style="color:var(--white)">Overview</strong> and <strong style="color:var(--white)">Alerts</strong> sections of the platform with clickable links.</p>
+            <h3>Adding a Contact</h3>
+            <table class="icon-table">
+              <thead><tr><th>Field</th><th>Description</th></tr></thead>
+              <tbody>
+                <tr><td>Name</td><td>Full name of the contact person</td></tr>
+                <tr><td>Type</td><td>Contact type — e.g. Technical, Emergency, Owner</td></tr>
+                <tr><td>Email</td><td>Clickable email link shown on asset overview</td></tr>
+                <tr><td>Mobile</td><td>Clickable mobile number shown on asset overview</td></tr>
+                <tr><td>Phone</td><td>Office or landline number</td></tr>
+                <tr><td>Notes</td><td>Additional notes visible with the contact</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="article-section" id="viewing">
+            <h2>4. Viewing Assets in a Group</h2>
+            <p>Select any Asset Group from the list, then choose the <strong style="color:var(--white)">Assets</strong> section in the right panel to see all assets assigned to that group, along with their group membership details.</p>
+          </div>
+
+          <hr class="article-divider">
+          <div class="page-footer">Lynx Telematics Knowledge Base &nbsp;·&nbsp; Administration &nbsp;·&nbsp; Internal Use Only</div>
+        </div>
+        <div class="article-toc">
+          <div class="toc-label">On This Page</div>
+          <a class="toc-link" href="#structure">1. Understanding the Structure</a>
+          <a class="toc-link" href="#creating">2. Creating Asset Groups</a>
+          <a class="toc-link" href="#editing">3. Editing Group Information</a>
+          <a class="toc-link" href="#viewing">4. Viewing Assets in a Group</a>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>
+<script src="../js/main.js"></script>
+</body>
+</html>

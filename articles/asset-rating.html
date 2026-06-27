@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Asset Rating | Lynx Telematics KB</title>
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+<div class="layout">
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-header">
+      <div class="logo-block">
+        <div class="logo-icon">LT</div>
+        <div><div class="logo-name">Lynx Telematics</div><div class="logo-sub">Knowledge Base</div></div>
+      </div>
+    </div>
+    <div class="search-wrap">
+      <input class="search-input" type="text" id="searchInput" placeholder="Search articles..." oninput="filterNav(this.value)">
+      <span class="search-icon">&#9906;</span>
+    </div>
+    <nav class="nav" id="navTree">
+      <div class="nav-section">
+        <div class="nav-section-label">Getting Started</div>
+        <a class="nav-link" href="../index.html">Home</a>
+        <a class="nav-link" href="module1-icons.html">Module 1 — Platform Icons</a>
+      </div>
+      <div class="nav-section">
+        <div class="nav-section-label">Administration</div>
+        <a class="nav-link" href="asset-groups.html">Asset Groups</a>
+        <a class="nav-link active" href="asset-rating.html">Asset Rating</a>
+        <a class="nav-link" href="cost-centres.html">Cost Centres</a>
+        <a class="nav-link" href="users.html">Users</a>
+        <a class="nav-link" href="user-roles.html">User Roles</a>
+      </div>
+      <div class="nav-section">
+        <div class="nav-section-label">Reference</div>
+        <a class="nav-link coming" href="#">CAN / FMS Parameter Guide</a>
+        <a class="nav-link coming" href="#">Device Configuration</a>
+        <a class="nav-link coming" href="#">Alert Setup Guide</a>
+      </div>
+    </nav>
+    <div class="sidebar-footer"><span>Lynx Telematics &copy; 2025</span></div>
+  </aside>
+  <main class="main">
+    <header class="topbar">
+      <button class="menu-toggle" onclick="toggleSidebar()">&#9776;</button>
+      <div class="breadcrumb"><a href="../index.html">Home</a><span class="sep">›</span><a href="#">Administration</a><span class="sep">›</span>Asset Rating</div>
+      <div class="topbar-right"><span class="badge">Administration</span></div>
+    </header>
+    <div class="content">
+      <div class="article-wrap">
+        <div class="article-body">
+          <h1 class="article-title">Asset Rating</h1>
+          <div class="article-meta">
+            <span>&#128197; Published June 2025</span>
+            <span>&#128194; Platform: Keytelemetrics</span>
+            <span>&#128100; Audience: Administrators</span>
+          </div>
+          <p style="font-size:14px;color:var(--text);line-height:1.75;margin-bottom:20px;">Asset Rating Profiles are used to rate the performance of an asset — such as a vehicle or driver — for each trip completed. A rating profile is built from events with assigned penalty values. When those events trigger during a trip, points are deducted from the score. The perfect rating score is <strong style="color:var(--white)">100</strong>.</p>
+          <div class="callout note"><strong>Note:</strong> A client can have more than one Rating Profile, however an asset can only have <strong>one</strong> assigned to it at a time.</div>
+          <hr class="article-divider">
+
+          <div class="article-section" id="create-profile">
+            <h2>1. Creating a Rating Profile</h2>
+            <p>Navigate to <strong style="color:var(--white)">Administration → Profiles → Asset Rating</strong>, then follow these steps:</p>
+            <table class="icon-table">
+              <thead><tr><th>Step</th><th>Action</th></tr></thead>
+              <tbody>
+                <tr><td>1</td><td>Click the <strong style="color:var(--white)">+</strong> button above the Rating Profile list</td></tr>
+                <tr><td>2</td><td>Enter a <strong style="color:var(--white)">Name</strong> for the profile</td></tr>
+                <tr><td>3</td><td>Click <strong style="color:var(--white)">Next</strong>, confirm the name, then click <strong style="color:var(--white)">Finish</strong></td></tr>
+              </tbody>
+            </table>
+            <div class="callout warn"><strong>Warning:</strong> The newly created profile will show a warning that it is incomplete until at least one penalty has been added.</div>
+          </div>
+
+          <div class="article-section" id="penalties">
+            <h2>2. Adding Events and Penalties</h2>
+            <p>Edit the Rating Profile, then click <strong style="color:var(--white)">Add</strong> to open the Rating Penalty box. Complete the fields and click <strong style="color:var(--white)">OK</strong>, then <strong style="color:var(--white)">Save</strong>.</p>
+            <table class="icon-table">
+              <thead><tr><th>Field</th><th>Description</th></tr></thead>
+              <tbody>
+                <tr><td>Name</td><td>Label for this penalty rule (e.g. Harsh Braking)</td></tr>
+                <tr><td>Penalty</td><td>Points deducted per event occurrence</td></tr>
+                <tr><td>Max Penalty</td><td>Maximum total points that can be deducted from this single event type per trip</td></tr>
+                <tr><td>Cost</td><td>Optional cost value per event — used in Trip Analytics reports. Minimum value: 0.1</td></tr>
+                <tr><td>Event Filter</td><td>The specific event that triggers this penalty (e.g. Harsh Brake event)</td></tr>
+              </tbody>
+            </table>
+            <div class="callout tip"><strong>Example:</strong> Harsh Braking penalty = 10 points, Max Penalty = 40. This means the driver can lose a maximum of 40 points from harsh braking per trip, regardless of how many times it triggers.</div>
+          </div>
+
+          <div class="article-section" id="negative-scores">
+            <h2>3. Understanding Negative Scores</h2>
+            <p>The default Max Penalty per event is 100. If multiple penalties are added and Max Penalty is left at 100 for each, the minimum trip score can go into negative values. Use the table below to understand the difference:</p>
+            <table class="icon-table">
+              <thead><tr><th>Profile</th><th>Events</th><th>Max Penalty Each</th><th>Minimum Score</th></tr></thead>
+              <tbody>
+                <tr><td>Profile I</td><td>Speeding, Harsh Braking, Harsh Cornering</td><td>100 each</td><td style="color:var(--red);font-weight:700;">−200</td></tr>
+                <tr><td>Profile II</td><td>Speeding, Harsh Braking, Harsh Cornering</td><td>20 / 40 / 40</td><td style="color:var(--green);font-weight:700;">0</td></tr>
+              </tbody>
+            </table>
+            <div class="callout warn"><strong>Best practice:</strong> Set Max Penalty values so the combined total does not exceed 100 — this prevents negative scores and keeps ratings meaningful.</div>
+          </div>
+
+          <div class="article-section" id="assign">
+            <h2>4. Assigning a Rating Profile to Assets</h2>
+            <h3>Individual Asset</h3>
+            <p>Select the asset in Administration → Assets, open the <strong style="color:var(--white)">Settings</strong> section, and assign the Rating Profile under <strong style="color:var(--white)">Asset Rating</strong>.</p>
+            <h3>Multiple Assets</h3>
+            <p>Hold <strong style="color:var(--white)">Ctrl</strong> and click to select multiple assets, then open the Settings section and assign the profile. All selected assets will be updated simultaneously.</p>
+            <div class="callout warn"><strong>Important:</strong> Any Rating Profile already assigned to a selected asset will be overwritten when assigning in bulk.</div>
+          </div>
+
+          <div class="article-section" id="viewing">
+            <h2>5. Viewing Rating Scores</h2>
+            <p>The rating score displays as a <strong style="color:var(--white)">coloured star</strong> and a percentage anywhere a trip appears. Hover over the star to reveal the exact score.</p>
+            <table class="icon-table">
+              <thead><tr><th>Icon Colour</th><th>Score Range</th><th>Meaning</th></tr></thead>
+              <tbody>
+                <tr><td><span class="icon-pill green">GREEN ★</span></td><td>66 – 100%</td><td>Good driver behaviour — few or no events triggered</td></tr>
+                <tr><td><span class="icon-pill orange">ORANGE ★</span></td><td>33 – 66%</td><td>Average — some events recorded, review recommended</td></tr>
+                <tr><td><span class="icon-pill red">RED ★</span></td><td>0 – 33%</td><td>Poor — significant events recorded, discuss with driver</td></tr>
+              </tbody>
+            </table>
+            <p>Rating scores appear in the following locations:</p>
+            <table class="icon-table">
+              <thead><tr><th>Location</th><th>What You See</th></tr></thead>
+              <tbody>
+                <tr><td>Asset Overview → Asset Details</td><td>Latest trip rating star for the selected asset</td></tr>
+                <tr><td>Trip Replay → Trip list per day</td><td>Star rating next to each trip entry</td></tr>
+                <tr><td>Trip Replay → Selected trip details</td><td>Rating %, penalty breakdown, event count, speed graph</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="article-section" id="reporting">
+            <h2>6. Reporting on Asset Rating</h2>
+            <h3>Standard Reports</h3>
+            <p>The <strong style="color:var(--white)">Asset Rating Report</strong> shows the rating per trip or per day, including penalties received. The <strong style="color:var(--white)">Trip Listing Report</strong> can also include the rating score column.</p>
+            <h3>Analytics Reports / Dashboards</h3>
+            <p>The <strong style="color:var(--white)">Trip Analytics Report</strong> includes the Rating Profile as a parameter. Once run, Measures appear based on the Rating Profile configured for the client — including event counts (instances) and cost per event if assigned. Total event cost will appear in the graph when selected from the Measures panel.</p>
+          </div>
+
+          <hr class="article-divider">
+          <div class="page-footer">Lynx Telematics Knowledge Base &nbsp;·&nbsp; Administration &nbsp;·&nbsp; Internal Use Only</div>
+        </div>
+        <div class="article-toc">
+          <div class="toc-label">On This Page</div>
+          <a class="toc-link" href="#create-profile">1. Creating a Profile</a>
+          <a class="toc-link" href="#penalties">2. Adding Penalties</a>
+          <a class="toc-link" href="#negative-scores">3. Negative Scores</a>
+          <a class="toc-link" href="#assign">4. Assigning to Assets</a>
+          <a class="toc-link" href="#viewing">5. Viewing Scores</a>
+          <a class="toc-link" href="#reporting">6. Reporting</a>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>
+<script src="../js/main.js"></script>
+</body>
+</html>

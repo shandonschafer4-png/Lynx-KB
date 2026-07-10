@@ -162,7 +162,7 @@ a:hover { color: var(--white); }
   font-size: 10px;
   text-transform: uppercase;
   letter-spacing: 1.4px;
-  color: var(--text-dim);
+  color: #777777;
   padding: 12px 18px 5px;
   font-weight: 700;
 }
@@ -171,7 +171,7 @@ a:hover { color: var(--white); }
   display: block;
   padding: 8px 18px 8px 22px;
   font-size: 13px;
-  color: var(--text-muted);
+  color: #b8b8b8;
   border-left: 2px solid transparent;
   transition: all 0.15s;
   white-space: nowrap;
@@ -180,7 +180,7 @@ a:hover { color: var(--white); }
 }
 .nav-link:hover { color: var(--white); background: var(--red-glow2); border-left-color: var(--red-dim); }
 .nav-link.active { color: var(--white); background: var(--red-glow); border-left-color: var(--red); font-weight: 600; }
-.nav-link.coming { color: var(--text-dim); font-style: italic; cursor: default; pointer-events: none; }
+.nav-link.coming { color: #666666; font-style: italic; cursor: default; pointer-events: none; }
 
 .sidebar-footer {
   padding: 12px 18px;
@@ -621,3 +621,4 @@ a:hover { color: var(--white); }
   .article-body { padding: 28px 24px; }
   .article-toc { display: none; }
 }
+
